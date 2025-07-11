@@ -11,6 +11,7 @@
 PRタイトルとコミットメッセージは [Conventional Commits](https://www.conventionalcommits.org/) の仕様に従うこと。
 
 ### フォーマット例
+
 - `feat: add new feature`
 - `fix: resolve authentication issue`
 - `docs: update README`
@@ -22,6 +23,7 @@ PRタイトルとコミットメッセージは [Conventional Commits](https://w
 ## 共通コーディング規約 (Common Coding Standards)
 
 ### プロジェクト構成
+
 - **ライセンス**: リポジトリごとの LICENSE ファイルを参照
 - **Node.js パッケージマネージャー**: pnpm を優先使用
   - コマンドがない場合はインストールすること
@@ -29,11 +31,13 @@ PRタイトルとコミットメッセージは [Conventional Commits](https://w
 - **主要言語**: TypeScript を推奨
 
 ### コード品質
+
 - **Linter**: ESLint を使用（`@book000/eslint-config` を推奨）
 - **フォーマッタ**: Prettier を使用
 - **型チェック**: TypeScript の厳密な型チェックを有効化
 
 ### 開発ワークフロー
+
 - **CI/CD**: GitHub Actions を使用
 - **プルリクエスト**: レビューを必須とし、コードの品質を維持
 - **自動化**: 可能な限りスクリプトやワークフローで自動化
