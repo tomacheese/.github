@@ -1,16 +1,21 @@
 # GitHub Copilot Instructions - tomacheese Organization
 
-## 言語設定 (Language Settings)
+This file is the org-wide reference for Copilot and agent conventions in the tomacheese organization. It contains only the minimal rules that hold regardless of project specifics. For project-specific conventions, see each repository's `AGENTS.md`, README, and docs.
 
-- **会話言語**: すべての会話（PR本文、レビューへの対応、コメントなど）は日本語で行うこと
-- **PRタイトル**: 英語で記載すること
-- **コミットメッセージ**: 英語で記載すること
+## Language Policy
 
-## コミット規約 (Commit Conventions)
+- The default language is English for commit messages (Conventional Commits with an English description), PR and Issue titles and bodies, review comments, code comments and docstrings, and documentation.
+- Private repositories use Japanese.
+- Public repositories whose audience is Japanese-only may use Japanese.
+- Each repository's own root `AGENTS.md` is the source of truth and takes precedence over this org-wide default. When it is present, follow it. When it is absent or ambiguous, default to English.
+- `package.json` is always written in English.
+- Exceptions: end-user-facing UI and notification text, quotations, technical identifiers, generated files, and external source text.
 
-PRタイトルとコミットメッセージは [Conventional Commits](https://www.conventionalcommits.org/) の仕様に従うこと。
+## Commit Conventions
 
-### フォーマット例
+PR titles and commit messages must follow [Conventional Commits](https://www.conventionalcommits.org/). The description language follows the Language Policy above.
+
+### Format examples
 
 - `feat: add new feature`
 - `fix: resolve authentication issue`
@@ -20,28 +25,24 @@ PRタイトルとコミットメッセージは [Conventional Commits](https://w
 - `test: add unit tests`
 - `chore: update dependencies`
 
-## 共通コーディング規約 (Common Coding Standards)
+## Common Coding Standards
 
-### プロジェクト構成
+### Project structure
 
-- **ライセンス**: リポジトリごとの LICENSE ファイルを参照
-- **Node.js パッケージマネージャー**: pnpm を優先使用
-  - コマンドがない場合はインストールすること
-  - ロックファイルに基づき、適切なパッケージマネージャーを使用する。誤ったパッケージマネージャーを使用しロックファイルが新規作成された場合は削除する
-- **主要言語**: TypeScript を推奨
+- **License**: refer to each repository's LICENSE file.
+- **Node.js package manager**: prefer pnpm.
+  - Install it if the command is not available.
+  - Use the package manager that matches the lockfile. If the wrong package manager was used and a new lockfile was created, delete it.
+- **Primary language**: TypeScript is preferred.
 
-### コード品質
+### Code quality
 
-- **Linter**: ESLint を使用（`@book000/eslint-config` を推奨）
-- **フォーマッタ**: Prettier を使用
-- **型チェック**: TypeScript の厳密な型チェックを有効化
+- **Linter**: use ESLint (`@book000/eslint-config` is recommended).
+- **Formatter**: use Prettier.
+- **Type checking**: enable strict TypeScript type checking.
 
-### 開発ワークフロー
+### Development workflow
 
-- **CI/CD**: GitHub Actions を使用
-- **プルリクエスト**: レビューを必須とし、コードの品質を維持
-- **自動化**: 可能な限りスクリプトやワークフローで自動化
-
-## 注意事項 (Notes)
-
-この指示書は tomacheese オーガニゼーション全体に適用されるため、各プロジェクトの特性に関わらず共通で適用できる最小限のルールのみを記載しています。プロジェクト固有の詳細な規約については、各リポジトリの README やドキュメントを参照してください。
+- **CI/CD**: use GitHub Actions.
+- **Pull requests**: review is required to maintain code quality.
+- **Automation**: automate with scripts and workflows wherever possible.
